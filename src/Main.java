@@ -45,7 +45,7 @@ public class Main {
                 System.out.println("You receive 1 log");
                 keepAsking = false;
 
-            } else if (input.equalsIgnoreCase("n")) {
+            } else if (input.equalsIgnoreCase("N")) {
                 System.out.println("You decided not to cut the tree.");
                 System.out.println("Talk to Brianna, again? Y/N");
 
