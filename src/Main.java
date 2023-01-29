@@ -1,4 +1,4 @@
-
+import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 
@@ -59,7 +59,7 @@ public class Main {
                 System.out.println("\nYou decided not to cut the tree.");
             }
         }
-        System.out.println("Brianna: Great! Use your tinderbox on the logs to create fire.");
+        System.out.println("\nBrianna: Great! Use your tinderbox on the logs to create fire.");
 
         boolean keepAsking2 = true;
         while (keepAsking2) {
