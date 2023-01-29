@@ -1,3 +1,4 @@
+
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 
@@ -7,46 +8,61 @@ public class Main {
     public static void main(String[] args) {
         charCreation();
         firemakingFishingTutorial();
+        briannaCooking();
     }
 
     //character creation method
     public static void charCreation() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to runescape!");
-        System.out.println("What is your name?");
-        String playerName = scanner.nextLine();
+        System.out.println("\nWelcome to runescape!");
+        System.out.println("What is your name, adventurer?");
+        String playerName = scanner.nextLine(); //user inputs their char name
 
-        System.out.println("Welcome to the world of runescape, " + playerName + "!");
+        System.out.println("Loading Tutorial island...");
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        System.out.println("\nWelcome to the world of runescape, " + playerName + "!");
+
+        try{
+            TimeUnit.SECONDS.sleep(2);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 
-    public static void firemakingFishingTutorial() {
+    public static void firemakingFishingTutorial() { //firemaking and fishing skill on tutorial
         Scanner scanner = new Scanner(System.in);
-        System.out.println("My name is Brianna! Here's an axe and a tinderbox, cut a nearby tree!");
+        System.out.println("\nBrianna: My name is Brianna! Here's an axe and a tinderbox, cut a nearby tree!");
 
-        boolean keepAsking = true;
+        boolean keepAsking = true; //if this remains true, it will keep asking if you want to cut the tree
 
-        while (keepAsking) {
+        while (keepAsking) { //while loop to keep asking if user wants to cut the tree
             System.out.println("You see a nearby tree, do you want to cut it? (Y/N)");
-            String input = scanner.nextLine();
+            String input = scanner.nextLine(); //user input to cut a tree
 
-            if (input.equalsIgnoreCase("y")) {
-                System.out.println("You swing your axe at the tree.");
+            if (input.equalsIgnoreCase("y")) { //if user input is y
+                System.out.println("You swing your axe at the tree."); //print this
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    e.printStackTrace(); //timer for 1 second to simulate rs cutting tree
                 }
-                System.out.println("You receive 1 log");
+                System.out.println("You receive 1 log"); //user receives 1 log, then can choose to light it by pressing 1
                 keepAsking = false;
-            } else if (input.equalsIgnoreCase("N")) {
-                System.out.println("You decided not to cut the tree.");
+
+            } else if (input.equalsIgnoreCase("n")) { //but if they input n, they dont cut tree
+                System.out.println("\nYou decided not to cut the tree.");
             }
         }
         System.out.println("Brianna: Great! Use your tinderbox on the logs to create fire.");
 
-        boolean keepAsking3 = true;
-        while (keepAsking3) {
+        boolean keepAsking2 = true;
+        while (keepAsking2) {
             System.out.println("Press 1 to use your tinderbox to light the logs.");
             String lightLogs = scanner.nextLine();
 
@@ -58,10 +74,43 @@ public class Main {
                     e.printStackTrace();
                 }
                 System.out.println("You create a fire!");
-                keepAsking3 = false;
+                keepAsking2 = false;
             } else {
                 System.out.println(lightLogs + " is an invalid choice.");
             }
         }
     }
+
+    public static void briannaCooking() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nBrianna: Now that you know how to make a fire, take this fishing net.");
+        System.out.println("Brianna hands you a fishing net");
+        System.out.println("\nGo to the river and fish some shrimps, then cook it on the fire you made.");
+        boolean keepAsking3 = true;
+
+        while (keepAsking3) {
+
+            System.out.println("Fish at the river? (Y/N)");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("y")) {
+                System.out.println("You cast out your net...");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("You caught some shrimp!");
+                keepAsking3 = false;
+
+            } else if (input.equalsIgnoreCase("n")){
+                System.out.println("You choose not to light the logs.");
+                System.out.println("Brianna: This is a tutorial, you must light it.");
+
+            }
+        }
+
+
+    }
+
 }
