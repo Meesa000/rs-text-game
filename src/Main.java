@@ -9,6 +9,7 @@ public class Main {
         charCreation();
         firemakingFishingTutorial();
         briannaCooking();
+        System.out.println("hi");
     }
 
     //character creation method
@@ -77,6 +78,7 @@ public class Main {
                 keepAsking2 = false;
             } else {
                 System.out.println(lightLogs + " is an invalid choice.");
+                System.out.println("Brianna: This is a tutorial, you must light it.");
             }
         }
     }
@@ -103,11 +105,9 @@ public class Main {
                 System.out.println("You caught some shrimp!");
                 keepAsking3 = false;
 
-            } else if (input.equalsIgnoreCase("n")){
-                System.out.println("You choose not to light the logs.");
-                System.out.println("Brianna: This is a tutorial, you must light it.");
-
             }
+
+
         }
 
 
