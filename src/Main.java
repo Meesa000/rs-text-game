@@ -11,7 +11,7 @@ public class Main {
         charCreation();
         firemakingFishingTutorial();
         briannaCooking();
-        System.out.println("You will now move on to the next segment of the tutorial.");
+        System.out.println("\nYou will now move on to the next segment of the tutorial.");
         breadMake();
     }
 
@@ -118,8 +118,8 @@ public class Main {
 
     public static void breadMake() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Chef: It's time for you to learn how to make bread!");
-        System.out.println("First pick up the flour, pour some water on it and then cook it on the range");
+        System.out.println("\nChef: It's time for you to learn how to make bread!");
+        System.out.println("First pick up the flour, pour some water on it and then cook it on the range.");
 
         boolean keepAsking = true;
 
@@ -136,7 +136,36 @@ public class Main {
                 System.out.println(playerChoice + " is not a valid input.");
 
             }
+        boolean keepAskingWater = true;
+        while (keepAskingWater){
+            System.out.println("Press 1 to fill up the jug with water: ");
+            String answerWater = scanner.nextLine();
+
+            if (answerWater.equals("1")){
+                System.out.println("You fill up the water.");
+                keepAskingWater = false;
+
+            }
+            else {
+                System.out.println(answerWater + " is an invalid choice.");
+            }
         }
+        boolean keepAskingBread = true;
+        while (keepAskingBread){
+            System.out.println("Press 1 to make dough and use it on the range: ");
+            String makeDough = scanner.nextLine();
+            if (makeDough.equals("1")){
+                System.out.println("You make the dough.");
+                System.out.println("You cook the dough on the range.");
+                System.out.println("\n You make bread!");
+                System.out.println("\nChef: Cooked to perfection!");
+                keepAskingBread = false;
+            }
+
+        }
+
+        }
+
 
 
     }
