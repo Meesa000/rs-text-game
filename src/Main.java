@@ -6,10 +6,13 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+
         charCreation();
         firemakingFishingTutorial();
         briannaCooking();
-        System.out.println("hi");
+        System.out.println("You will now move on to the next segment of the tutorial.");
+        breadMake();
     }
 
     //character creation method
@@ -23,15 +26,15 @@ public class Main {
         System.out.println("Loading Tutorial island...");
         try {
             TimeUnit.SECONDS.sleep(1);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         System.out.println("\nWelcome to the world of runescape, " + playerName + "!");
 
-        try{
+        try {
             TimeUnit.SECONDS.sleep(2);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -113,4 +116,29 @@ public class Main {
 
     }
 
+    public static void breadMake() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Chef: It's time for you to learn how to make bread!");
+        System.out.println("First pick up the flour, pour some water on it and then cook it on the range");
+
+        boolean keepAsking = true;
+
+        while (keepAsking){
+
+            System.out.println("Press 1 to take the flour: ");
+            String playerChoice = scanner.nextLine();
+
+
+            if (playerChoice.equalsIgnoreCase("1") ){
+                System.out.println("You take the flour.");
+                keepAsking = false;
+            }else {
+                System.out.println(playerChoice + " is not a valid input.");
+
+            }
+        }
+
+
+    }
 }
+
